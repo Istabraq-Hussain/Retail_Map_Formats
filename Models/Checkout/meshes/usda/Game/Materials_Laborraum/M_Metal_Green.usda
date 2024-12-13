@@ -1,0 +1,43 @@
+#usda 1.0
+(
+    defaultPrim = "M_Metal_Green"
+    upAxis = "Z"
+)
+
+def Material "M_Metal_Green" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/Checkout/meshes/usda/Game/Materials_Laborraum/M_Metal_Green.usda@
+        string name = "M_Metal_Green"
+        dictionary unreal = {
+            string assetType = "Material"
+            string contentPath = "/Game/Materials_Laborraum/M_Metal_Green.M_Metal_Green"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-22.27.37"
+        }
+        string version = "3D50AFC4DA9267B6CE57FF9B409599B4207E97E9"
+    }
+)
+{
+    token outputs:surface.connect = </M_Metal_Green/SurfaceShader.outputs:surface>
+    token outputs:unreal:surface.connect = </M_Metal_Green/UnrealShader.outputs:out>
+
+    def Shader "UnrealShader"
+    {
+        uniform token info:implementationSource = "sourceAsset"
+        uniform asset info:unreal:sourceAsset = @/Game/Materials_Laborraum/M_Metal_Green.M_Metal_Green@
+        token outputs:out
+    }
+
+    def Shader "SurfaceShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        float inputs:anisotropy = 0
+        color3f inputs:diffuseColor = (0.029556833, 0.099898726, 0.034339808)
+        float inputs:metallic = 0.69803923
+        float inputs:occlusion = 1
+        float inputs:roughness = 0.20000002
+        float inputs:specular = 1
+        token outputs:surface
+    }
+}
+

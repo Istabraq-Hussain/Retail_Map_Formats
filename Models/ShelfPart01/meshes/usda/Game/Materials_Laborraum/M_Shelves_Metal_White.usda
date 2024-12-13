@@ -1,0 +1,43 @@
+#usda 1.0
+(
+    defaultPrim = "M_Shelves_Metal_White"
+    upAxis = "Z"
+)
+
+def Material "M_Shelves_Metal_White" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfPart01/meshes/usda/Game/Materials_Laborraum/M_Shelves_Metal_White.usda@
+        string name = "M_Shelves_Metal_White"
+        dictionary unreal = {
+            string assetType = "Material"
+            string contentPath = "/Game/Materials_Laborraum/M_Shelves_Metal_White.M_Shelves_Metal_White"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-18.20.13"
+        }
+        string version = "714A39398A229970E2E8EC9CA366BB3242E41E1A"
+    }
+)
+{
+    token outputs:surface.connect = </M_Shelves_Metal_White/SurfaceShader.outputs:surface>
+    token outputs:unreal:surface.connect = </M_Shelves_Metal_White/UnrealShader.outputs:out>
+
+    def Shader "UnrealShader"
+    {
+        uniform token info:implementationSource = "sourceAsset"
+        uniform asset info:unreal:sourceAsset = @/Game/Materials_Laborraum/M_Shelves_Metal_White.M_Shelves_Metal_White@
+        token outputs:out
+    }
+
+    def Shader "SurfaceShader"
+    {
+        uniform token info:id = "UsdPreviewSurface"
+        float inputs:anisotropy = 0
+        color3f inputs:diffuseColor = (1, 0.9911021, 0.9559733)
+        float inputs:metallic = 0.098039225
+        float inputs:occlusion = 1
+        float inputs:roughness = 0.20000002
+        float inputs:specular = 0.8000001
+        token outputs:surface
+    }
+}
+

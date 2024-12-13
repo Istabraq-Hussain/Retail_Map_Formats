@@ -1,0 +1,118 @@
+#usda 1.0
+(
+    defaultPrim = "SM_Checkout"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "SM_Checkout" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/Checkout/meshes/usda/Game/Meshes/Raum/SM_Checkout.usda@
+        string name = "SM_Checkout"
+        dictionary unreal = {
+            string assetType = "StaticMesh"
+            string contentPath = "/Game/Meshes/Raum/SM_Checkout.SM_Checkout"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-22.27.42"
+        }
+        string version = "CAE9C619359C23A95312E2436AED27426C1E7AB5"
+    }
+    prepend payload = @SM_Checkout_payload.usda@
+)
+{
+    over "Section0" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Metal_Checked>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Metal_Checked.M_Metal_Checked"
+    }
+
+    over "Section1" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Metal_Green>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Metal_Green.M_Metal_Green"
+    }
+
+    over "Section2" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Plastic_Dark>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Plastic_Dark.M_Plastic_Dark"
+    }
+
+    over "Section3" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Metal_Brushed>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Metal_Brushed.M_Metal_Brushed"
+    }
+
+    over "Section4" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Metal_Brushed>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Metal_Brushed.M_Metal_Brushed"
+    }
+
+    over "Section5" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Glass>
+        custom string unrealMaterial = "/Game/StarterContent/Materials/M_Glass.M_Glass"
+    }
+
+    over "Section6" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Checkout/Materials/M_Rubber_Dark>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Rubber_Dark.M_Rubber_Dark"
+    }
+
+    def Scope "Materials"
+    {
+        def Material "M_Metal_Checked" (
+            prepend references = @../../Materials_Laborraum/M_Metal_Checked.usda@
+        )
+        {
+        }
+
+        def Material "M_Metal_Green" (
+            prepend references = @../../Materials_Laborraum/M_Metal_Green.usda@
+        )
+        {
+        }
+
+        def Material "M_Plastic_Dark" (
+            prepend references = @../../Materials_Laborraum/M_Plastic_Dark.usda@
+        )
+        {
+        }
+
+        def Material "M_Metal_Brushed" (
+            prepend references = @../../Materials_Laborraum/M_Metal_Brushed.usda@
+        )
+        {
+        }
+
+        def Material "M_Glass" (
+            prepend references = @../../StarterContent/Materials/M_Glass.usda@
+        )
+        {
+        }
+
+        def Material "M_Rubber_Dark" (
+            prepend references = @../../Materials_Laborraum/M_Rubber_Dark.usda@
+        )
+        {
+        }
+    }
+}
+

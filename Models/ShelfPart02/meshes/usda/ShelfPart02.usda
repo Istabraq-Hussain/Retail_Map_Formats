@@ -1,0 +1,31 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Root" (
+    assetInfo = {
+        asset identifier = @../../../../../../Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfPart02/meshes/usda/ShelfPart02.usda@
+        string name = "01_IstabraqsRetail"
+        dictionary unreal = {
+            string assetType = "World"
+            string contentPath = "/Game/IstabraqsMaps/01_IstabraqsRetail.01_IstabraqsRetail"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-22.54.13"
+        }
+        string version = "4BC99AC6C6E85AFA4DFC9926771B7C683B079069"
+    }
+)
+{
+    def "ShelfPart02" (
+        prepend references = @Game/Meshes/Raum/SM_Shelves_Part_02.usda@
+    )
+    {
+        token visibility = "inherited"
+        matrix4d xformOp:transform = ( (-0.9999999999999996, -1.224646799147353e-16, 0, 0), (1.224646799147353e-16, -0.9999999999999996, 0, 0), (0, 0, 1, 0), (0, -0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

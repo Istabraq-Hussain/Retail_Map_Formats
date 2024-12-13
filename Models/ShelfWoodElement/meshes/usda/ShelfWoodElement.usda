@@ -1,0 +1,52 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Root" (
+    assetInfo = {
+        asset identifier = @../../../../../../Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfWoodElement/meshes/usda/ShelfWoodElement.usda@
+        string name = "01_IstabraqsRetail"
+        dictionary unreal = {
+            string assetType = "World"
+            string contentPath = "/Game/IstabraqsMaps/01_IstabraqsRetail.01_IstabraqsRetail"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-23.24.02"
+        }
+        string version = "090F6BDD22AD026FA71BA1D137E61AB667FA3273"
+    }
+)
+{
+    def "ShelfWoodElement" (
+        prepend references = @Game/Meshes/Raum/SM_Shelf_Wood_Element_01.usda@
+    )
+    {
+        token visibility = "inherited"
+        matrix4d xformOp:transform = ( (-0.9999999999999996, -1.224646799147353e-16, 0, 0), (1.224646799147353e-16, -0.9999999999999996, 0, 0), (0, 0, 1, 0), (0, -0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over "Section0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Root/ShelfWoodElement/Section0/UnrealMaterial>
+
+            def Material "UnrealMaterial" (
+                prepend references = @Game/Materials_Laborraum/M_Panel_Orange.usda@
+            )
+            {
+                token outputs:unreal:surface.connect = </Root/ShelfWoodElement/Section0/UnrealMaterial/UnrealShader.outputs:out>
+
+                def Shader "UnrealShader"
+                {
+                    uniform token info:implementationSource = "sourceAsset"
+                    uniform asset info:unreal:sourceAsset = @/Game/Materials_Laborraum/M_Panel_Orange.M_Panel_Orange@
+                    token outputs:out
+                }
+            }
+        }
+    }
+}
+

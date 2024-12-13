@@ -1,0 +1,68 @@
+#usda 1.0
+(
+    defaultPrim = "SM_Shelves_Base_04"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "SM_Shelves_Base_04" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelvesBase04/meshes/usda/Game/Meshes/Raum/SM_Shelves_Base_04.usda@
+        string name = "SM_Shelves_Base_04"
+        dictionary unreal = {
+            string assetType = "StaticMesh"
+            string contentPath = "/Game/Meshes/Raum/SM_Shelves_Base_04.SM_Shelves_Base_04"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-16.38.21"
+        }
+        string version = "FF0C5A47FE2B009B33863AF0DFC68021733D1B51"
+    }
+    prepend payload = @SM_Shelves_Base_04_payload.usda@
+)
+{
+    over "Section0" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Shelves_Base_04/Materials/M_Plastic_Dark>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Plastic_Dark.M_Plastic_Dark"
+    }
+
+    over "Section1" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Shelves_Base_04/Materials/M_Shelves_Metal_White>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Shelves_Metal_White.M_Shelves_Metal_White"
+    }
+
+    over "Section2" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Shelves_Base_04/Materials/M_Metal_Chrome>
+        custom string unrealMaterial = "/Game/StarterContent/Materials/M_Metal_Chrome.M_Metal_Chrome"
+    }
+
+    def Scope "Materials"
+    {
+        def Material "M_Plastic_Dark" (
+            prepend references = @../../Materials_Laborraum/M_Plastic_Dark.usda@
+        )
+        {
+        }
+
+        def Material "M_Shelves_Metal_White" (
+            prepend references = @../../Materials_Laborraum/M_Shelves_Metal_White.usda@
+        )
+        {
+        }
+
+        def Material "M_Metal_Chrome" (
+            prepend references = @../../StarterContent/Materials/M_Metal_Chrome.usda@
+        )
+        {
+        }
+    }
+}
+

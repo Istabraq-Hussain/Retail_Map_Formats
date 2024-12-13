@@ -1,0 +1,54 @@
+#usda 1.0
+(
+    defaultPrim = "SM_Shelf_Wood_Element_01"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "SM_Shelf_Wood_Element_01" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfWoodElement/meshes/usda/Game/Meshes/Raum/SM_Shelf_Wood_Element_01.usda@
+        string name = "SM_Shelf_Wood_Element_01"
+        dictionary unreal = {
+            string assetType = "StaticMesh"
+            string contentPath = "/Game/Meshes/Raum/SM_Shelf_Wood_Element_01.SM_Shelf_Wood_Element_01"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.12-23.24.02"
+        }
+        string version = "8375CCD16CEBAF95291D40EC347CE27129DFF985"
+    }
+    prepend payload = @SM_Shelf_Wood_Element_01_payload.usda@
+)
+{
+    over "Section0" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Shelf_Wood_Element_01/Materials/M_Panel_Green>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Panel_Green.M_Panel_Green"
+    }
+
+    over "Section1" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Shelf_Wood_Element_01/Materials/M_Door_Wood>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Door_Wood.M_Door_Wood"
+    }
+
+    def Scope "Materials"
+    {
+        def Material "M_Panel_Green" (
+            prepend references = @../../Materials_Laborraum/M_Panel_Green.usda@
+        )
+        {
+        }
+
+        def Material "M_Door_Wood" (
+            prepend references = @../../Materials_Laborraum/M_Door_Wood.usda@
+        )
+        {
+        }
+    }
+}
+
