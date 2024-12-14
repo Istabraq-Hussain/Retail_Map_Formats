@@ -1,0 +1,36 @@
+#usda 1.0
+(
+    defaultPrim = "SM_Shelf_Basket_Intersection"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "SM_Shelf_Basket_Intersection" (
+    prepend apiSchemas = ["MaterialBindingAPI"]
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfBasketBaseIntersection/meshes/usda/Game/Meshes/Raum/SM_Shelf_Basket_Intersection.usda@
+        string name = "SM_Shelf_Basket_Intersection"
+        dictionary unreal = {
+            string assetType = "StaticMesh"
+            string contentPath = "/Game/Meshes/Raum/SM_Shelf_Basket_Intersection.SM_Shelf_Basket_Intersection"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.13-17.29.16"
+        }
+        string version = "5F43647DBA12F2E5F8CF7A965ACAB9926808AA31"
+    }
+    prepend payload = @SM_Shelf_Basket_Intersection_payload.usda@
+)
+{
+    rel material:binding = </SM_Shelf_Basket_Intersection/Materials/M_Metal_Chrome>
+    custom string unrealMaterial = "/Game/Materials_Laborraum/M_Metal_Chrome.M_Metal_Chrome"
+
+    def Scope "Materials"
+    {
+        def Material "M_Metal_Chrome" (
+            prepend references = @../../Materials_Laborraum/M_Metal_Chrome.usda@
+        )
+        {
+        }
+    }
+}
+

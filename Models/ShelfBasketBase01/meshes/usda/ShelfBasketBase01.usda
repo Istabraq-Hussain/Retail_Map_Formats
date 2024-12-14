@@ -1,0 +1,47 @@
+#usda 1.0
+(
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Root" (
+    assetInfo = {
+        asset identifier = @../../../../../../Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/ShelfBasketBase01/meshes/usda/ShelfBasketBase01.usda@
+        string name = "01_IstabraqsRetail"
+        dictionary unreal = {
+            string assetType = "World"
+            string contentPath = "/Game/IstabraqsMaps/01_IstabraqsRetail.01_IstabraqsRetail"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.13-17.00.32"
+        }
+        string version = "9D67D24CC1184A98D550D2250CEFF1BD49582C2F"
+    }
+)
+{
+    def "ShelfBasketBase01" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        prepend references = @Game/Meshes/Raum/SM_Shelf_Basket_Base_01.usda@
+    )
+    {
+        rel material:binding = </Root/ShelfBasketBase01/UnrealMaterial>
+        token visibility = "inherited"
+        matrix4d xformOp:transform = ( (-0.9999999999999996, -1.224646799147353e-16, 0, 0), (1.224646799147353e-16, -0.9999999999999996, 0, 0), (0, 0, 1, 0), (0, -0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Material "UnrealMaterial" (
+            prepend references = @Game/Materials_Laborraum/M_Metal_Chrome.usda@
+        )
+        {
+            token outputs:unreal:surface.connect = </Root/ShelfBasketBase01/UnrealMaterial/UnrealShader.outputs:out>
+
+            def Shader "UnrealShader"
+            {
+                uniform token info:implementationSource = "sourceAsset"
+                uniform asset info:unreal:sourceAsset = @/Game/Materials_Laborraum/M_Metal_Chrome.M_Metal_Chrome@
+                token outputs:out
+            }
+        }
+    }
+}
+
