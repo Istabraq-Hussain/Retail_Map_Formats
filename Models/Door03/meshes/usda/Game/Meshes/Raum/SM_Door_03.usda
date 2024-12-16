@@ -1,0 +1,76 @@
+#usda 1.0
+(
+    defaultPrim = "SM_Door_03"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def "SM_Door_03" (
+    assetInfo = {
+        asset identifier = @C:/Users/Ista/Desktop/Art/AI Institute Bremen/Objectstandardisation/Retail_Map_Formats/Retail_Map_Formats/Models/Door03/meshes/usda/Game/Meshes/Raum/SM_Door_03.usda@
+        string name = "SM_Door_03"
+        dictionary unreal = {
+            string assetType = "StaticMesh"
+            string contentPath = "/Game/Meshes/Raum/SM_Door_03.SM_Door_03"
+            string engineVersion = "5.3.2-29314046+++UE5+Release-5.3"
+            string exportTime = "2024.12.16-16.43.44"
+        }
+        string version = "D38080C3332261497BB1AA09479A033144E6F424"
+    }
+    prepend payload = @SM_Door_03_payload.usda@
+)
+{
+    over "Section0" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Door_03/Materials/M_Door_Wood>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Door_Wood.M_Door_Wood"
+    }
+
+    over "Section1" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Door_03/Materials/M_Glass_Spots>
+        custom string unrealMaterial = "/Game/Materials_Laborraum/M_Glass_Spots.M_Glass_Spots"
+    }
+
+    over "Section2" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Door_03/Materials/M_Metal_Brushed_Nickel>
+        custom string unrealMaterial = "/Game/StarterContent/Materials/M_Metal_Brushed_Nickel.M_Metal_Brushed_Nickel"
+    }
+
+    over "Section3" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </SM_Door_03/Materials/M_Metal_Brushed_Nickel>
+        custom string unrealMaterial = "/Game/StarterContent/Materials/M_Metal_Brushed_Nickel.M_Metal_Brushed_Nickel"
+    }
+
+    def Scope "Materials"
+    {
+        def Material "M_Door_Wood" (
+            prepend references = @../../Materials_Laborraum/M_Door_Wood.usda@
+        )
+        {
+        }
+
+        def Material "M_Glass_Spots" (
+            prepend references = @../../Materials_Laborraum/M_Glass_Spots.usda@
+        )
+        {
+        }
+
+        def Material "M_Metal_Brushed_Nickel" (
+            prepend references = @../../StarterContent/Materials/M_Metal_Brushed_Nickel.usda@
+        )
+        {
+        }
+    }
+}
+
